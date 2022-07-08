@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MyMoney.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:MyMoney.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="One" Icon="{StaticResource IconOne}">
+            <ShellContent
+                Title="One"
+                ContentTemplate="{DataTemplate views:MainPage}"
+                Route="OnePage" /> 
+        </Tab>
+        <Tab Title="Two" Icon="{StaticResource IconTwo}">
+            <ShellContent
+                Title="Two"
+                ContentTemplate="{DataTemplate views:MainPage}"
+                Route="TwoPage" />
+        </Tab>
+        <Tab Title="Three" Icon="{StaticResource IconThree}">
+            <ShellContent
+                Title="Three"
+                ContentTemplate="{DataTemplate views:MainPage}"
+                Route="ThreePage" />
+        </Tab>
+        <Tab Title="Four" Icon="{StaticResource IconFour}">
+            <ShellContent
+                Title="Four"
+                ContentTemplate="{DataTemplate views:MainPage}"
+                Route="FourPage" />
+        </Tab>
+    </TabBar>
+
+
+</Shell>
