@@ -7,29 +7,23 @@
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
-        <Tab Title="One" Icon="{StaticResource IconOne}">
+        <Tab Title="Dashboard" Icon="{StaticResource Dashboard}">
             <ShellContent
-                Title="One"
-                ContentTemplate="{DataTemplate views:MainPage}"
+                Title="Dashboard"
+                ContentTemplate="{DataTemplate views:DashboardPage}"
                 Route="OnePage" /> 
         </Tab>
-        <Tab Title="Two" Icon="{StaticResource IconTwo}">
+        <Tab Title="Movimentation" Icon="{StaticResource Movimentation}">
             <ShellContent
-                Title="Two"
-                ContentTemplate="{DataTemplate views:MainPage}"
+                Title="Movimentation"
+                ContentTemplate="{DataTemplate views:MovimentationPage}"
                 Route="TwoPage" />
         </Tab>
-        <Tab Title="Three" Icon="{StaticResource IconThree}">
+        <Tab Title="Budget" Icon="{StaticResource Budget}">
             <ShellContent
-                Title="Three"
-                ContentTemplate="{DataTemplate views:MainPage}"
+                Title="Budget"
+                ContentTemplate="{DataTemplate views:BudgetPage}"
                 Route="ThreePage" />
-        </Tab>
-        <Tab Title="Four" Icon="{StaticResource IconFour}">
-            <ShellContent
-                Title="Four"
-                ContentTemplate="{DataTemplate views:MainPage}"
-                Route="FourPage" />
         </Tab>
     </TabBar>
 

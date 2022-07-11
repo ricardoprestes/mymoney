@@ -5,26 +5,23 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MyMoney.Resources">
 
-    <FontImage x:Key="IconOne"
+    <FontImage x:Key="Dashboard"
                FontFamily="FontAwesome"
                Size="22"
                Color="{StaticResource Primary}"
-               Glyph="{x:Static local:IconFont.DiceOne}"/>
-    <FontImage x:Key="IconTwo"
+               Glyph="{x:Static local:IconFont.ChartPie}"/>
+
+    <FontImage x:Key="Movimentation"
                FontFamily="FontAwesome"
                Size="22"
                Color="{StaticResource Primary}"
-               Glyph="{x:Static local:IconFont.DiceTwo}"/>
-    <FontImage x:Key="IconThree"
+               Glyph="{x:Static local:IconFont.ArrowRightArrowLeft}"/>
+
+    <FontImage x:Key="Budget"
                FontFamily="FontAwesome"
                Size="22"
                Color="{StaticResource Primary}"
-               Glyph="{x:Static local:IconFont.DiceThree}"/>
-    <FontImage x:Key="IconFour"
-               FontFamily="FontAwesome"
-               Size="22"
-               Color="{StaticResource Primary}"
-               Glyph="{x:Static local:IconFont.DiceFour}"/>
+               Glyph="{x:Static local:IconFont.HandHoldingDollar}"/>
 
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
