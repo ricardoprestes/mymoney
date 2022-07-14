@@ -49,11 +49,13 @@
 	  <None Remove="ViewModels\" />
 	  <None Remove="Views\" />
 	  <None Remove="Models\" />
+	  <None Remove="Resources\Strings\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Views\" />
 	  <Folder Include="Models\" />
+	  <Folder Include="Resources\Strings\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="Views\MainPage %28copy%29.xaml">
@@ -68,5 +70,16 @@
 	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="Views\BudgetPage.xaml">
 	    <SubType>Designer</SubType>
 	  </MauiXaml>
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\Strings\AppResource.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Resources\Strings\AppResource.Designer.cs">
+	    <DependentUpon>AppResource.resx</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 </Project>
