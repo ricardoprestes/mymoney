@@ -50,6 +50,9 @@
 	  <None Remove="Views\" />
 	  <None Remove="Models\" />
 	  <None Remove="Resources\Strings\" />
+	  <None Remove="CommunityToolkit.Maui" />
+	  <None Remove="CommunityToolkit.Maui.Core" />
+	  <None Remove="CommunityToolkit.Maui.Markup" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="ViewModels\" />
@@ -81,5 +84,10 @@
 	  <Compile Update="Resources\Strings\AppResource.Designer.cs">
 	    <DependentUpon>AppResource.resx</DependentUpon>
 	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Maui" Version="1.1.0" />
+	  <PackageReference Include="CommunityToolkit.Maui.Core" Version="1.1.0" />
+	  <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.1" />
 	</ItemGroup>
 </Project>
