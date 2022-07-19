@@ -54,6 +54,7 @@
 	  <None Remove="CommunityToolkit.Maui.Core" />
 	  <None Remove="CommunityToolkit.Maui.Markup" />
 	  <None Remove="Microsoft.Toolkit.Mvvm" />
+	  <None Remove="CommunityToolkit.Mvvm" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="ViewModels\" />
@@ -90,6 +91,6 @@
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.1.0" />
 	  <PackageReference Include="CommunityToolkit.Maui.Core" Version="1.1.0" />
 	  <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.1" />
-	  <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />
 	</ItemGroup>
 </Project>

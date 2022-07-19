@@ -28,7 +28,7 @@
                         Grid.Row="1"
                         Grid.ColumnSpan="4"
                         FontAttributes="Bold"
-                        Text="R$ 999.999.000,00"
+                        Text="{Binding BalanceFormated}"
                         TextColor="Green"
                         FontSize="Title"
                         HorizontalTextAlignment="Center" />
