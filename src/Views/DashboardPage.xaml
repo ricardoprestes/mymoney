@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MyMoney.Resources"
              xmlns:strings="clr-namespace:MyMoney.Resources.Strings"
+             xmlns:viewModels="clr-namespace:MyMoney.ViewModels"
+             x:DataType="viewModels:DashboardViewModel"
              x:Class="MyMoney.Views.DashboardPage">
 			 
     <ScrollView>
@@ -58,7 +60,7 @@
                     <Label
                         Grid.Column="1"
                         Grid.Row="3"
-                        Text="R$ 999.999,00"
+                        Text="{Binding RevenuesFormated}"
                         TextColor="Green"
                         FontSize="Medium"
                         FontAttributes="Bold"
@@ -90,7 +92,7 @@
                     <Label
                         Grid.Column="3"
                         Grid.Row="3"
-                        Text="R$ 999.999,00"
+                        Text="{Binding ExpensesFormated}"
                         TextColor="Red"
                         FontSize="Medium"
                         FontAttributes="Bold"
