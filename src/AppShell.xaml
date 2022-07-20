@@ -4,24 +4,25 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:MyMoney.Views"
+    xmlns:strings="clr-namespace:MyMoney.Resources.Strings"
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
-        <Tab Title="Dashboard" Icon="{StaticResource Dashboard}">
+        <Tab Title="{x:Static strings:AppResource.Dashboard}" Icon="{StaticResource Dashboard}">
             <ShellContent
-                Title="Dashboard"
+                Title="{x:Static strings:AppResource.Dashboard}"
                 ContentTemplate="{DataTemplate views:DashboardPage}"
                 Route="OnePage" /> 
         </Tab>
-        <Tab Title="Movimentation" Icon="{StaticResource Movimentation}">
+        <Tab Title="{x:Static strings:AppResource.Movimentation}" Icon="{StaticResource Movimentation}">
             <ShellContent
-                Title="Movimentation"
+                Title="{x:Static strings:AppResource.Movimentation}"
                 ContentTemplate="{DataTemplate views:MovimentationPage}"
                 Route="TwoPage" />
         </Tab>
-        <Tab Title="Budget" Icon="{StaticResource Budget}">
+        <Tab Title="{x:Static strings:AppResource.Budget}" Icon="{StaticResource Budget}">
             <ShellContent
-                Title="Budget"
+                Title="{x:Static strings:AppResource.Budget}"
                 ContentTemplate="{DataTemplate views:BudgetPage}"
                 Route="ThreePage" />
         </Tab>
