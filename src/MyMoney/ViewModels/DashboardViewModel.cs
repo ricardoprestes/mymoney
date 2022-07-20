@@ -19,13 +19,6 @@ namespace MyMoney.ViewModels
         decimal expenses;
         public string ExpensesFormated => string.Format("R$ {0:###,###,###,##0.00}", Expenses);
 
-
-        public DashboardViewModel()
-        {
-            Balance = 999999;
-            Revenues = 123456;
-            Expenses = 99555;
-        }
     }
 }
 
