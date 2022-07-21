@@ -7,24 +7,29 @@
     xmlns:strings="clr-namespace:MyMoney.Resources.Strings"
     Shell.FlyoutBehavior="Disabled">
 
+
+    <ShellItem Route="LoginPage">
+        <ShellContent ContentTemplate="{DataTemplate views:LoginPage}" />
+    </ShellItem>
+
     <TabBar>
         <Tab Title="{x:Static strings:AppResource.Dashboard}" Icon="{StaticResource Dashboard}">
             <ShellContent
                 Title="{x:Static strings:AppResource.Dashboard}"
                 ContentTemplate="{DataTemplate views:DashboardPage}"
-                Route="OnePage" /> 
+                Route="DashboardPage" /> 
         </Tab>
         <Tab Title="{x:Static strings:AppResource.Movimentation}" Icon="{StaticResource Movimentation}">
             <ShellContent
                 Title="{x:Static strings:AppResource.Movimentation}"
                 ContentTemplate="{DataTemplate views:MovimentationPage}"
-                Route="TwoPage" />
+                Route="MovimentationPage" />
         </Tab>
         <Tab Title="{x:Static strings:AppResource.Budget}" Icon="{StaticResource Budget}">
             <ShellContent
                 Title="{x:Static strings:AppResource.Budget}"
                 ContentTemplate="{DataTemplate views:BudgetPage}"
-                Route="ThreePage" />
+                Route="BudgetPage" />
         </Tab>
     </TabBar>
 
