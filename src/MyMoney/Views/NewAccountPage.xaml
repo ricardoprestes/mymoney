@@ -30,14 +30,18 @@
                     Text="Name" />
                 <Entry
                     Grid.Row="1"
-                    Placeholder="My Name"/>
+                    Placeholder="My Name"
+                    Text="{Binding Name}"
+                    />
 
                 <Label
                     Grid.Row="2"
                     Text="Enter with your e-mail" />
                 <Entry
                     Grid.Row="3"
-                    Placeholder="youremail@sample.com"/>
+                    Placeholder="youremail@sample.com"
+                    Text="{Binding Email}"
+                    />
 
                 <Label
                     Grid.Row="4"
@@ -45,7 +49,9 @@
                 <Entry
                     Grid.Row="5"
                     Placeholder="password"
-                    IsPassword="True"/>
+                    IsPassword="True"
+                    Text="{Binding Password}"
+                    />
 
                 <Label
                     Grid.Row="6"
@@ -54,7 +60,9 @@
                 <Entry
                     Grid.Row="7"
                     Placeholder="password"
-                    IsPassword="True"/>
+                    IsPassword="True"
+                    Text="{Binding ConfirmPassword}"
+                    />
 
                 <Button
                     Grid.Row="8"
