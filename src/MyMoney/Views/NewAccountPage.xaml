@@ -4,14 +4,68 @@
              xmlns:viewModels="clr-namespace:MyMoney.ViewModels"
              x:Class="MyMoney.Views.NewAccountPage"
              x:DataType="viewModels:NewAccountViewModel"
-             Title="NewAccountPage">
-    <StackLayout>
-        <Label Text="Welcome to .NET MAUI!"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
 
-        <Button Text="Create"
-                Command="{Binding CreateNewAccountCommand}" />
-    </StackLayout>
+    <Grid
+        RowDefinitions="*,3*"
+        ColumnDefinitions="*,5*,*">
+
+        <Border
+            Grid.Row="1"
+            Grid.Column="1"
+            >
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="50,50,0,0" />
+            </Border.StrokeShape>
+
+            <Grid
+                RowSpacing="20"
+                ColumnSpacing="20"
+                Padding="40"
+                RowDefinitions="20,40,20,40,20,40,20,40,40"
+                >
+
+                <Label
+                    Text="Name" />
+                <Entry
+                    Grid.Row="1"
+                    Placeholder="My Name"/>
+
+                <Label
+                    Grid.Row="2"
+                    Text="Enter with your e-mail" />
+                <Entry
+                    Grid.Row="3"
+                    Placeholder="youremail@sample.com"/>
+
+                <Label
+                    Grid.Row="4"
+                    Text="Enter with your password" />
+                <Entry
+                    Grid.Row="5"
+                    Placeholder="password"
+                    IsPassword="True"/>
+
+                <Label
+                    Grid.Row="6"
+                    Text="Confirm your password" />
+
+                <Entry
+                    Grid.Row="7"
+                    Placeholder="password"
+                    IsPassword="True"/>
+
+                <Button
+                    Grid.Row="8"
+                    Text="Sing Up"
+                    Command="{Binding CreateNewAccountCommand}" />
+
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
 </ContentPage>
 

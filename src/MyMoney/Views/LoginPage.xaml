@@ -5,22 +5,57 @@
              x:Class="MyMoney.Views.LoginPage"
              x:DataType="viewModels:LoginViewModel"
              Shell.FlyoutBehavior="Disabled"
-             Shell.NavBarIsVisible="False"
-             
-             Title="LoginPage">
-    <StackLayout Spacing="20"
-                 Padding="20">
-        <Label Text="Enter with your e-mail" />
-        <Entry Placeholder="youremail@sample.com"/>
-        <Label Text="Enter with your password" />
-        <Entry Placeholder="password"
-               IsPassword="True"/>
+             Shell.NavBarIsVisible="False">
 
-        <Button Text="Entrar"
-                Command="{Binding LoginCommand}"
-                IsEnabled="{Binding IsNotBusy}" />
-        <Button Text="Register"
-                Command="{Binding NewAccountCommand}" />
-    </StackLayout>
+    <Grid
+        RowDefinitions="*,3*"
+        ColumnDefinitions="*,5*,*">
+
+        <Border
+            Grid.Row="1"
+            Grid.Column="1"
+            >
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="50,50,0,0" />
+            </Border.StrokeShape>
+
+            <Grid
+                RowSpacing="20"
+                ColumnSpacing="20"
+                Padding="40"
+                RowDefinitions="20,40,20,40,40,40"
+                >
+
+                <Label
+                    Text="Enter with your e-mail" />
+                <Entry
+                    Grid.Row="1"
+                    Placeholder="youremail@sample.com"/>
+                <Label
+                    Grid.Row="2"
+                    Text="Enter with your password" />
+                <Entry
+                    Grid.Row="3"
+                    Placeholder="password"
+                    IsPassword="True"/>
+
+                <Button
+                    Grid.Row="4"
+                    Text="Sing In"
+                    Command="{Binding LoginCommand}"
+                    IsEnabled="{Binding IsNotBusy}" />
+
+                <Button
+                    Grid.Row="5"
+                    Text="Sing Up"
+                    Command="{Binding NewAccountCommand}" />
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+
+    
 </ContentPage>
 
