@@ -1,4 +1,5 @@
 ﻿using System;
+using BurgerMonkeys.Tools;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MyMoney.Views;
@@ -32,6 +33,12 @@ namespace MyMoney.ViewModels
 
         public async Task CreateNewAccount()
         {
+            if(Email.IsEmail() is false)
+            {
+                await Shell.Current.DisplayAlert("Invalid email", "Provide a valid email.", "Ok");
+                return;
+            }
+
             if(PasswordMatch() is false)
             {
                 await Shell.Current.DisplayAlert("Password not match", "Password and confirm password not match.", "Ok");
