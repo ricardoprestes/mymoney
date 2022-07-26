@@ -22,8 +22,8 @@ public partial class AppShell : Shell
 
 	private async Task OnAppearingAsync()
     {
-        var token = Settings.GetToken();
-        if(token.IsNotNullOrWhiteSpace())
-            await Shell.Current.GoToAsync($"//{nameof(DashboardPage)}");
+        //var token = Settings.GetToken();
+        //if(token.IsNotNullOrWhiteSpace())
+        //    await Shell.Current.GoToAsync($"//{nameof(DashboardPage)}");
     }
 }

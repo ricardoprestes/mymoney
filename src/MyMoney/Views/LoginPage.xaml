@@ -41,13 +41,13 @@
 
                 <Button
                     Grid.Row="4"
-                    Text="Sing In"
+                    Text="Sign In"
                     Command="{Binding LoginCommand}"
                     IsEnabled="{Binding IsNotBusy}" />
 
                 <Button
                     Grid.Row="5"
-                    Text="Sing Up"
+                    Text="Sign Up"
                     Command="{Binding NewAccountCommand}" />
 
             </Grid>

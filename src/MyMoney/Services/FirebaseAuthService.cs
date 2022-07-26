@@ -19,18 +19,10 @@ namespace MyMoney.Services
 
         public async Task<string> SingUp(string name, string email, string password)
         {
-            try
-            {
-                var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Constants.FirebaseWebApiKey));
-                var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(email, password, displayName: name);
-                var token = auth.FirebaseToken;
-                return token;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return string.Empty;
-            }
+            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Constants.FirebaseWebApiKey));
+            var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(email, password, displayName: name);
+            var token = auth.FirebaseToken;
+            return token;
         }
     }
 }

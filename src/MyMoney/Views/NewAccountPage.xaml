@@ -66,7 +66,7 @@
 
                 <Button
                     Grid.Row="8"
-                    Text="Sing Up"
+                    Text="Sign Up"
                     Command="{Binding CreateNewAccountCommand}" />
 
 

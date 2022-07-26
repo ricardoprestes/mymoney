@@ -16,7 +16,7 @@ namespace MyMoney.ViewModels
         {
             _firebaseAuthService = firebaseAuthService;
 
-            CreateNewAccountCommand = new AsyncRelayCommand(CreateNewAccount, SingUpCanExecute);
+            CreateNewAccountCommand = new AsyncRelayCommand(CreateNewAccount, SignUpCanExecute);
         }
 
         [ObservableProperty]
@@ -51,13 +51,27 @@ namespace MyMoney.ViewModels
                 return;
             }
 
-            var token = await _firebaseAuthService.SingUp(Name, Email, Password);
-            Settings.SaveToken(token);
+            IsBusy = true;
 
-            await Shell.Current.GoToAsync($"//{nameof(DashboardPage)}");
+            try
+            {
+                var token = await _firebaseAuthService.SingUp(Name, Email, Password);
+                Settings.SaveToken(token);
+                await Shell.Current.GoToAsync($"//{nameof(DashboardPage)}");
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("EMAIL_EXISTS"))
+                    await Shell.Current.DisplayAlert("Invalid email", "This email is already in use.", "Ok");
+                else
+                    await Shell.Current.DisplayAlert("Sign up problem", "An error has occurred, please check your details and try again.", "Ok");
+            }
+
+            IsBusy = false;
+
         }
 
-        private bool SingUpCanExecute()
+        private bool SignUpCanExecute()
         {
             return string.IsNullOrWhiteSpace(Name) is false &&
                    string.IsNullOrWhiteSpace(Email) is false &&
