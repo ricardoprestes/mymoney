@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MyMoney.Services;
 using MyMoney.Views;
+using MyMoney.Helpers;
 
 namespace MyMoney.ViewModels
 {
@@ -49,6 +50,9 @@ namespace MyMoney.ViewModels
                 await Shell.Current.DisplayAlert("Password not match", "Password and confirm password not match.", "Ok");
                 return;
             }
+
+            var token = await _firebaseAuthService.SingUp(Name, Email, Password);
+            Settings.SaveToken(token);
 
             await Shell.Current.GoToAsync($"//{nameof(DashboardPage)}");
         }
