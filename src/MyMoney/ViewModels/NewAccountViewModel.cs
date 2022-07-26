@@ -2,14 +2,19 @@
 using BurgerMonkeys.Tools;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MyMoney.Services;
 using MyMoney.Views;
 
 namespace MyMoney.ViewModels
 {
     public partial class NewAccountViewModel : BaseViewModel
     {
-        public NewAccountViewModel()
+        private readonly IFirebaseAuthService _firebaseAuthService;
+
+        public NewAccountViewModel(IFirebaseAuthService firebaseAuthService)
         {
+            _firebaseAuthService = firebaseAuthService;
+
             CreateNewAccountCommand = new AsyncRelayCommand(CreateNewAccount, SingUpCanExecute);
         }
 

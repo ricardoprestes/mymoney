@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Markup;
+using MyMoney.Helpers;
+using MyMoney.Services;
 using MyMoney.ViewModels;
 using MyMoney.Views;
 
@@ -12,6 +14,9 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.ConfigureServices()
+			.ConfigurePages()
+			.ConfigureViewModels()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -20,18 +25,6 @@ public static class MauiProgram
 			})
             .UseMauiCommunityToolkit()
             .UseMauiCommunityToolkitMarkup();
-
-		builder.Services.AddSingleton<LoginPage>();
-        builder.Services.AddSingleton<NewAccountPage>();
-        builder.Services.AddSingleton<DashboardPage>();
-        builder.Services.AddSingleton<MovimentationPage>();
-        builder.Services.AddSingleton<BudgetPage>();
-
-        builder.Services.AddSingleton<LoginViewModel>();
-        builder.Services.AddSingleton<NewAccountViewModel>();
-        builder.Services.AddSingleton<DashboardViewModel>();
-        //builder.Services.AddSingleton<MovimentationViewModel>();
-        //builder.Services.AddSingleton<BudgetPViewModel>();
 
         return builder.Build();
 	}

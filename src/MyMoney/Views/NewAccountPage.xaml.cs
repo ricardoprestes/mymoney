@@ -4,9 +4,9 @@ namespace MyMoney.Views;
 
 public partial class NewAccountPage : ContentPage
 {
-	public NewAccountPage()
+	public NewAccountPage(NewAccountViewModel viewModel)
 	{
 		InitializeComponent();
-		BindingContext = new NewAccountViewModel();
+		BindingContext = viewModel;
 	}
 }
