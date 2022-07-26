@@ -2,9 +2,16 @@
 
 namespace MyMoney.ViewModels
 {
-    [INotifyPropertyChanged]
-    public abstract partial class BaseViewModel
+    public abstract partial class BaseViewModel : ObservableObject
     {
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
+        bool isBusy;
+
+        public bool IsNotBusy => !IsBusy;
+
+        [ObservableProperty]
+        string title;
     }
 }
 

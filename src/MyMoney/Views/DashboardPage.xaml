@@ -31,7 +31,7 @@
                         Grid.ColumnSpan="4"
                         FontAttributes="Bold"
                         Text="{Binding BalanceFormated}"
-                        TextColor="Green"
+                        TextColor="{StaticResource Primary}"
                         FontSize="Title"
                         HorizontalTextAlignment="Center" />
 
