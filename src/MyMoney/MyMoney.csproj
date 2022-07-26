@@ -55,12 +55,14 @@
 	  <None Remove="CommunityToolkit.Mvvm" />
 	  <None Remove="BurgerMonkeys.Tools" />
 	  <None Remove="FirebaseAuthentication.net" />
+	  <None Remove="Helpers\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Views\" />
 	  <Folder Include="Models\" />
 	  <Folder Include="Resources\Strings\" />
+	  <Folder Include="Helpers\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="Views\MainPage %28copy%29.xaml">
