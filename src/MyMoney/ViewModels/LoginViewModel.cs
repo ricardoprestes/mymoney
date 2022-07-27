@@ -1,4 +1,5 @@
 ﻿using System;
+using BurgerMonkeys.Tools;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MyMoney.Services;
@@ -33,6 +34,12 @@ namespace MyMoney.ViewModels
 
         public async Task SignIn()
         {
+            if (Email.IsEmail() is false)
+            {
+                await Shell.Current.DisplayAlert("Invalid email", "Provide a valid email.", "Ok");
+                return;
+            }
+
             await Shell.Current.GoToAsync($"//{nameof(DashboardPage)}");
         }
 
