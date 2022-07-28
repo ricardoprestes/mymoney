@@ -35,7 +35,7 @@ public partial class AppShell : Shell
             if (auth.IsExpired() is false)
                 await Shell.Current.GoToAsync($"//{nameof(DashboardPage)}");
 
-            
+
         }
     }
 }

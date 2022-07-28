@@ -18,6 +18,11 @@ namespace MyMoney.Helpers
             //var token = await SecureStorage.Default.GetAsync(FirebaseUserToken);
             return token;
         }
+
+        public static void ClearToken()
+        {
+            Preferences.Remove(FirebaseUserToken);
+        }
     }
 }
 

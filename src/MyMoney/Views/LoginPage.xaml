@@ -14,6 +14,7 @@
         <Border
             Grid.Row="1"
             Grid.Column="1"
+            BackgroundColor="#121212"
             >
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="50,50,0,0" />

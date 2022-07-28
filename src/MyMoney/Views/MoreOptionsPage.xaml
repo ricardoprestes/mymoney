@@ -4,10 +4,14 @@
              xmlns:viewModels="clr-namespace:MyMoney.ViewModels"
              x:Class="MyMoney.Views.MoreOptionsPage"
              x:DataType="viewModels:MoreOptionsViewModel">
-    <StackLayout>
-        <Label Text="Welcome to .NET MAUI!"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
+    <StackLayout
+        Spacing="8" 
+        Padding="16">
+
+        <Button
+            Text="Sign Up"
+            Command="{Binding SignOutCommand}" />
+
     </StackLayout>
 </ContentPage>
 
