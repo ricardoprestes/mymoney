@@ -5,6 +5,7 @@ using CommunityToolkit.Mvvm.Input;
 using MyMoney.Services;
 using MyMoney.Views;
 using MyMoney.Helpers;
+using Newtonsoft.Json;
 
 namespace MyMoney.ViewModels
 {
@@ -55,8 +56,9 @@ namespace MyMoney.ViewModels
 
             try
             {
-                var token = await _firebaseAuthService.SingUp(Name, Email, Password);
-                Settings.SaveToken(token);
+                var auth = await _firebaseAuthService.SingUp(Name, Email, Password);
+                var authSerialized = JsonConvert.SerializeObject(auth);
+                Settings.SaveToken(authSerialized);
                 await Shell.Current.GoToAsync($"//{nameof(DashboardPage)}");
             }
             catch (Exception ex)

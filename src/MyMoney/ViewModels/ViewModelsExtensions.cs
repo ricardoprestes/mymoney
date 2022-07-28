@@ -9,6 +9,7 @@ namespace MyMoney.ViewModels
             builder.Services.AddSingleton<LoginViewModel>();
             builder.Services.AddSingleton<NewAccountViewModel>();
             builder.Services.AddSingleton<DashboardViewModel>();
+            builder.Services.AddSingleton<MoreOptionsViewModel>();
             //builder.Services.AddSingleton<MovimentationViewModel>();
             //builder.Services.AddSingleton<BudgetPViewModel>();
 
