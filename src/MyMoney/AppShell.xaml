@@ -31,6 +31,13 @@
                 ContentTemplate="{DataTemplate views:BudgetPage}"
                 Route="BudgetPage" />
         </Tab>
+
+        <Tab Title="{x:Static strings:AppResource.MoreOptions}" Icon="{StaticResource MoreOptions}">
+            <ShellContent
+                Title="{x:Static strings:AppResource.MoreOptions}"
+                ContentTemplate="{DataTemplate views:MoreOptionsPage}"
+                Route="MoreOptionsPage" />
+        </Tab>
     </TabBar>
 
 

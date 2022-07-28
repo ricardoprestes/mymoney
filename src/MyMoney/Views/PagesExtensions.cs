@@ -11,6 +11,7 @@ namespace MyMoney.Views
             builder.Services.AddSingleton<DashboardPage>();
             builder.Services.AddSingleton<MovimentationPage>();
             builder.Services.AddSingleton<BudgetPage>();
+            builder.Services.AddSingleton<MoreOptionsPage>();
 
             return builder;
         }

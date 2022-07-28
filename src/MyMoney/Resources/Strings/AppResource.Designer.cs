@@ -94,6 +94,15 @@ namespace MyMoney.Resources.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to More.
+        /// </summary>
+        internal static string MoreOptions {
+            get {
+                return ResourceManager.GetString("MoreOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Movimentation.
         /// </summary>
         internal static string Movimentation {

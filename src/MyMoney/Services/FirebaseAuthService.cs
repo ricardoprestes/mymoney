@@ -7,6 +7,7 @@ namespace MyMoney.Services
     {
         Task<FirebaseAuth> SingIn(string email, string password);
         Task<FirebaseAuth> SingUp(string name, string email, string password);
+        Task<FirebaseAuth> RefreshAuth(FirebaseAuth firebaseAuth);
     }
 
     public class FirebaseAuthService : IFirebaseAuthService
@@ -16,6 +17,12 @@ namespace MyMoney.Services
         public FirebaseAuthService()
         {
             _provider = new FirebaseAuthProvider(new FirebaseConfig(Constants.FirebaseWebApiKey));
+        }
+
+        public async Task<FirebaseAuth> RefreshAuth(FirebaseAuth firebaseAuth)
+        {
+            var auth = await _provider.RefreshAuthAsync(firebaseAuth);
+            return auth;
         }
 
         public async Task<FirebaseAuth> SingIn(string email, string password)

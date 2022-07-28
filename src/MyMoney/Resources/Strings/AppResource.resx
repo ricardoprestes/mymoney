@@ -23,6 +23,9 @@
 	<data name="Budget" xml:space="preserve">
 		<value>Budget</value>
 	</data>
+	<data name="MoreOptions" xml:space="preserve">
+		<value>More</value>
+	</data>
 
 	<!--Labels-->
 	<data name="Balance" xml:space="preserve">
