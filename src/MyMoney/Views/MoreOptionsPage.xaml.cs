@@ -1,9 +1,12 @@
-﻿namespace MyMoney.Views;
+﻿using MyMoney.ViewModels;
+
+namespace MyMoney.Views;
 
 public partial class MoreOptionsPage : ContentPage
 {
-	public MoreOptionsPage()
+	public MoreOptionsPage(MoreOptionsViewModel viewModel)
 	{
 		InitializeComponent();
+		BindingContext = viewModel;
 	}
 }
