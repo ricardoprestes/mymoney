@@ -4,6 +4,8 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MyMoney.Services;
 using MyMoney.Views;
+using Newtonsoft.Json;
+using MyMoney.Helpers;
 
 namespace MyMoney.ViewModels
 {
@@ -39,6 +41,10 @@ namespace MyMoney.ViewModels
                 await Shell.Current.DisplayAlert("Invalid email", "Provide a valid email.", "Ok");
                 return;
             }
+
+            var auth = await _firebaseAuthService.SingIn(Email, password);
+            var authSerialized = JsonConvert.SerializeObject(auth);
+            Settings.SaveToken(authSerialized);
 
             await Shell.Current.GoToAsync($"//{nameof(DashboardPage)}");
         }

@@ -1,28 +1,33 @@
-﻿using System;
-using Firebase.Auth;
+﻿using Firebase.Auth;
 using MyMoney.Helpers;
 
 namespace MyMoney.Services
 {
     public interface IFirebaseAuthService
     {
-        void SingIn(string email, string password);
-        Task<string> SingUp(string name, string email, string password);
+        Task<FirebaseAuth> SingIn(string email, string password);
+        Task<FirebaseAuth> SingUp(string name, string email, string password);
     }
 
     public class FirebaseAuthService : IFirebaseAuthService
     {
-        public void SingIn(string email, string password)
+        private readonly FirebaseAuthProvider _provider;
+
+        public FirebaseAuthService()
         {
-            
+            _provider = new FirebaseAuthProvider(new FirebaseConfig(Constants.FirebaseWebApiKey));
         }
 
-        public async Task<string> SingUp(string name, string email, string password)
+        public async Task<FirebaseAuth> SingIn(string email, string password)
         {
-            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Constants.FirebaseWebApiKey));
-            var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(email, password, displayName: name);
-            var token = auth.FirebaseToken;
-            return token;
+            var auth = await _provider.SignInWithEmailAndPasswordAsync(email, password);
+            return auth;
+        }
+
+        public async Task<FirebaseAuth> SingUp(string name, string email, string password)
+        {
+            var auth = await _provider.CreateUserWithEmailAndPasswordAsync(email, password, displayName: name);
+            return auth;
         }
     }
 }
